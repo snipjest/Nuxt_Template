@@ -1,11 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div>
-		<WelcomeComponent />
-	</div>
+  <div>Home sd</div>
 </template>
 
-<style lang='scss' scoped>
-  
-</style>
+<style lang="scss" scoped></style>

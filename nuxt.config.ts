@@ -1,14 +1,14 @@
 import checker from 'vite-plugin-checker'
 
 export default defineNuxtConfig({
-	compatibilityDate: '2024-11-01',
-	devtools: { enabled: false },
-	devServer: {
-		port: 3000,
-		host: '0.0.0.0'
-	},
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: false },
+  devServer: {
+    port: 3000,
+    host: '0.0.0.0',
+  },
 
-	app: {
+  app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       charset: 'utf-8',
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'ru',
       },
-      meta: [{ name: 'apple-mobile-web-app-title', content: 'Limkorm' }],
+      /* meta: [{ name: 'apple-mobile-web-app-title', content: 'Limkorm' }],
       link: [
         {
           rel: 'icon',
@@ -43,34 +43,33 @@ export default defineNuxtConfig({
           rel: 'manifest',
           href: '/site.webmanifest',
         },
-      ],
+      ], */
     },
   },
 
-	modules: ['@nuxt/eslint', '@pinia/nuxt', 'nuxt-icons',
-    '@hypernym/nuxt-gsap'],
-	css: [  '~/assets/scss/main.scss'],
-	vite: {
-		plugins: [
-			checker({
-				eslint: {
-					useFlatConfig: true,
-					lintCommand: 'eslint "**/*.{js,ts,vue}"'
-				},
-			})
-		],
-		css: {
-			preprocessorOptions: {
-				scss: {
-					silenceDeprecations: ['legacy-js-api'],
-					additionalData: `@use "@/assets/scss/general/variables.scss" as *; @use "@/assets/scss/abstracts/mixins.scss" as *;`
-				}
-			}
-		}
-	},
-	runtimeConfig: {
-		public: {
-			baseUrl: process.env.BASE_URL
-		}
-	}
+  modules: ['@nuxt/eslint', '@pinia/nuxt', 'nuxt-icons', '@hypernym/nuxt-gsap'],
+  css: ['~/assets/scss/main.scss'],
+  vite: {
+    plugins: [
+      checker({
+        eslint: {
+          useFlatConfig: true,
+          lintCommand: 'eslint "**/*.{js,ts,vue}"',
+        },
+      }),
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ['legacy-js-api'],
+          additionalData: `@use "@/assets/scss/general/variables.scss" as *; @use "@/assets/scss/abstracts/mixins.scss" as *;`,
+        },
+      },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.BASE_URL,
+    },
+  },
 })
