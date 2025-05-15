@@ -1,0 +1,55 @@
+@use './../general/variables.scss' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  transition: all 0.2s ease 0s;
+  &--light {
+    background-color: #fff;
+    color: $color-black;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-black;
+      }
+    }
+    &:active {
+      background-color: $color-black;
+    }
+    &:disabled {
+      background-color: $color-black;
+      color: $color-black;
+      cursor: default;
+    }
+  }
+  &--dark {
+    background-color: $color-black;
+    color: #fff;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-black;
+      }
+    }
+    &:active {
+      background-color: $color-black;
+    }
+    &:disabled {
+      background-color: $color-black;
+      color: $color-black;
+      cursor: default;
+    }
+  }
+  svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease 0s;
+  }
+}
